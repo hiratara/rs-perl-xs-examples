@@ -6,7 +6,7 @@ A sample for https://github.com/vickenty/perl-xs/ .
 
 ```
 $ carton install
-$ carton exec -- 'perl Makefile.pl && make'
+$ carton exec -- 'perl Makefile.PL && make'
 $ carton exec -- 'perl -Mblib -MPerlXSTest -E "PerlXSTest::Hello::hello(\"perl\")"'
 Hello, perl !
 ```
