@@ -1,4 +1,4 @@
-package PerlXSTest;
+package Domain::PublicSuffix::RS;
 
 use strict;
 use warnings;
