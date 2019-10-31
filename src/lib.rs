@@ -3,18 +3,27 @@ extern crate perl_xs;
 #[macro_use]
 extern crate perl_sys;
 
-mod hello {
-    use perl_xs::SV;
-    xs! {
-    package PerlXSTest::Hello;
+mod fib {
+    use perl_xs::IV;
 
-    sub hello(ctx, name: SV) {
-        println!("Hello, {} !", name.to_string().unwrap());
+    fn fib_(n: i32) -> i32 {
+        if n <= 2 {
+            1
+        } else {
+            fib_(n - 1) + fib_(n - 2)
+        }
+    }
+
+    xs! {
+    package Fib::RS;
+
+    sub fib(ctx, n: IV) {
+        fib_(n as i32) as IV
     }
     }
 }
 
 xs! {
-    bootstrap boot_PerlXSTest;
-    use hello;
+    bootstrap boot_Fib__RS;
+    use fib;
 }

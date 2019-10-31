@@ -1,4 +1,4 @@
-package PerlXSTest;
+package Fib::RS;
 
 use strict;
 use warnings;

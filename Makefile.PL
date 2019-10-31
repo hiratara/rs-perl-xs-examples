@@ -1,6 +1,6 @@
 use inc::Module::Install;
 
-name "PerlXSTest";
+name "Fib-RS";
 version "0.01";
 abstract "Tests for perl-xs";
 
