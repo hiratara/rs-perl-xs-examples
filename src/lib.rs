@@ -3,18 +3,19 @@ extern crate perl_xs;
 #[macro_use]
 extern crate perl_sys;
 
-mod hello {
-    use perl_xs::SV;
-    xs! {
-    package PerlXSTest::Hello;
+mod fib {
+    use perl_xs::IV;
 
-    sub hello(ctx, name: SV) {
-        println!("Hello, {} !", name.to_string().unwrap());
+    xs! {
+    package Sum::RS;
+
+    sub sum(ctx, a: IV, b: IV) {
+        a + b
     }
     }
 }
 
 xs! {
-    bootstrap boot_PerlXSTest;
-    use hello;
+    bootstrap boot_Sum__RS;
+    use fib;
 }

@@ -1,4 +1,4 @@
-package PerlXSTest;
+package Sum::RS;
 
 use strict;
 use warnings;
